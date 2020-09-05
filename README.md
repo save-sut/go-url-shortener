@@ -5,3 +5,8 @@
 # Stack
 - Gin
 - Database : [jsonbox.io](https://jsonbox.io/ "jsonbox.io")
+
+# How to run
+export SHORTEN_URL_AP_KEYI=BOX_ID (from jsonbox)
+
+go run main.go
