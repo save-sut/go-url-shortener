@@ -65,7 +65,7 @@ func Shorten(c *gin.Context) {
 
 	customUrl := c.PostForm("custom_url")
 	apiKey := os.Getenv("SHORTEN_URL_AP_KEYI")
-	cl, _ := jsonbox.NewClient("https://jsonbox.io/")
+	cl, _ := jsonbox.NewClient("https://jsonbox-tyroz.herokuapp.com/")
 
 	urlArr, _ := cl.Read(apiKey)
 	urlArrByte := []byte(urlArr)
@@ -114,7 +114,7 @@ func RedirectOriginalUrl(c *gin.Context) {
 	shortenUrl := c.Param("shorten_url")
 
 	apiKey := os.Getenv("SHORTEN_URL_AP_KEYI")
-	cl, _ := jsonbox.NewClient("https://jsonbox.io/")
+	cl, _ := jsonbox.NewClient("https://jsonbox-tyroz.herokuapp.com/")
 
 	urlArr, _ := cl.Read(apiKey)
 	urlArrByte := []byte(urlArr)
@@ -143,7 +143,7 @@ func ClearAll(c *gin.Context) {
 	password := c.Param("password")
 
 	apiKey := os.Getenv("SHORTEN_URL_AP_KEYI")
-	cl, _ := jsonbox.NewClient("https://jsonbox.io/")
+	cl, _ := jsonbox.NewClient("https://jsonbox-tyroz.herokuapp.com/")
 
 	if password != "" && password == "save-sut" {
 		err := cl.DeleteAll(apiKey)
